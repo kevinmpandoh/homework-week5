@@ -19,17 +19,32 @@ class User {
 
         // Validasi input
         if (nama.length > 10) {
-            alert("Nama maksimal 10 karakter!");
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Nama maksimal 10 karakter!',
+                icon: 'error',
+                confirmButtonText: 'Kembali'
+            })            
             return;
         }
 
         if (umur < 25) {
-            alert("Umur minimal 25 tahun!");
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Umur minimal 25 tahun!',
+                icon: 'error',
+                confirmButtonText: 'Kembali'
+            })
             return;
         }
 
         if (uangSaku < 100000 || uangSaku > 1000000) {
-            alert("Uang saku harus antara 100.000 dan 1.000.000!");
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Uang sangu harus antara Rp100.000 dan Rp1.000.000!!',
+                icon: 'error',
+                confirmButtonText: 'Kembali'
+            })
             return;
         }
 

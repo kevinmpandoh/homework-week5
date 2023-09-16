@@ -9,6 +9,10 @@
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
+      <link
+      href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css "
+      rel="stylesheet"
+    />
     />
   </head>
   <body>
@@ -18,14 +22,14 @@
           <div class="m-4">
             <ul class="nav nav-underline nav-fill" id="myTab">
               <li class="nav-item">
-                <a href="#home" class="nav-link active">Registrasi</a>
+                <a href="#registrasi" class="nav-link active">Registrasi</a>
               </li>
               <li class="nav-item">
-                <a href="#profile" class="nav-link">List Pendaftar</a>
+                <a href="#list-pendaftaran" class="nav-link">List Pendaftar</a>
               </li>
             </ul>
             <div class="tab-content mt-4">
-              <div class="tab-pane fade show active" id="home">
+              <div class="tab-pane fade show active" id="registrasi">
                 <h4 class="mt-2 text-center">Registrasi</h4>
                 <form id="form">
                   <div class="mb-3">
@@ -34,31 +38,21 @@
                       type="text"
                       class="form-control"
                       id="nama"
-                      maxlength="10"
                       autocomplete="off"
                       autofocus
                     />
-                    <label id="notifikasiSisaKarakter">
-                      Sisa karakter: <span id="sisaKarakter"></span>
-                    </label>
                   </div>
                   <div class="mb-3">
                     <label for="umur" class="form-label">Umur</label>
                     <input type="number" class="form-control" id="umur" />
-                    <label id="notifikasiUmur" style="color: red"></label>
                   </div>
 
                   <div class="mb-3">
                     <label for="uangSangu" class="form-label">Uang Sangu</label>
                     <input type="number" class="form-control" id="uangSangu" />
-                    <label id="notifikasiUangSangu" style="color: red"></label>
                   </div>
                   <div class="d-grid col-6 gap-2 mx-auto mt-2">
-                    <button
-                      id="submitButton"
-                      class="btn btn-primary btn-lg"
-                      type="submit"
-                    >
+                    <button class="btn btn-primary btn-lg" type="submit">
                       Submit
                     </button>
                     <button class="btn btn-outline-primary btn-lg" type="reset">
@@ -67,7 +61,7 @@
                   </div>
                 </form>
               </div>
-              <div class="tab-pane fade mt-4" id="profile">
+              <div class="tab-pane fade mt-4" id="list-pendaftaran">
                 <h4 class="mt-2 text-center">List Pendaftar</h4>
                 <table id="table" class="table table-hover mb-5">
                   <thead>
@@ -83,8 +77,8 @@
                   <h3>Resume</h3>
                   <p>
                     Rata-rata pendaftar memiliki uang saku sebesar
-                    <span id="averageUangSaku">-</span> dengan rata-rata umur
-                    <span id="averageUmur">-</span>.
+                    <span id="averageUangSaku">0</span> dengan rata-rata umur
+                    <span id="averageUmur">0</span>.
                   </p>
                 </div>
               </div>
@@ -98,6 +92,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.all.min.js "></script>
     <script src="tab.js"></script>
     <script src="User.js"></script>
   </body>
