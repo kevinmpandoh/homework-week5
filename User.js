@@ -51,12 +51,20 @@ class User {
         this.addToTable(nama, umur, uangSaku);
         this.updateResume();
 
-        // Clear form
+        // Menghapus nilai di form
         this.namaInput.value = "";
         this.umurInput.value = "";
         this.uangSakuInput.value = "";
+
+        Swal.fire({
+            title: 'Berhasil!!',
+            text: 'Pendaftaran berhasil',
+            icon: 'success',
+            confirmButtonText: 'Kembali'
+        })   
     }
 
+    // Method untuk menambahkan baris baru di tabel
     addToTable(nama, umur, uangSaku) {
         const newRow = this.dataTabel.insertRow(this.dataTabel.rows.length);
         const cell1 = newRow.insertCell(0);
@@ -68,6 +76,7 @@ class User {
         cell3.innerHTML = uangSaku;
     }
 
+    // Mengupdate Resume
     updateResume() {
         const rows = this.dataTabel.rows;
         let totalUangSaku = 0;
