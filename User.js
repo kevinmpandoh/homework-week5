@@ -18,10 +18,10 @@ class User {
         const uangSaku = parseInt(this.uangSakuInput.value);
 
         // Validasi input
-        if (nama.length > 10) {
+        if (nama.length < 10) {
             Swal.fire({
                 title: 'Gagal!',
-                text: 'Nama maksimal 10 karakter!',
+                text: 'Nama minimal 10 karakter!',
                 icon: 'error',
                 confirmButtonText: 'Kembali'
             })            
