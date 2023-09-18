@@ -4,7 +4,7 @@ class User {
         this.dataTabel = document.getElementById("dataTabel");
         this.namaInput = document.getElementById("nama");
         this.umurInput = document.getElementById("umur");
-        this.uangSakuInput = document.getElementById("uangSangu");
+        this.uangSanguInput = document.getElementById("uangSangu");
 
         this.registrationForm.addEventListener("submit", (event) => {
             event.preventDefault();
@@ -15,7 +15,7 @@ class User {
     submitForm() {
         const nama = this.namaInput.value;
         const umur = parseInt(this.umurInput.value);
-        const uangSaku = parseInt(this.uangSakuInput.value);
+        const uangSangu = parseInt(this.uangSanguInput.value);
 
         // Validasi input
         if (nama.length < 10) {
@@ -38,7 +38,7 @@ class User {
             return;
         }
 
-        if (uangSaku < 100000 || uangSaku > 1000000) {
+        if (uangSangu < 100000 || uangSangu > 1000000) {
             Swal.fire({
                 title: 'Gagal!',
                 text: 'Uang sangu harus antara Rp100.000 dan Rp1.000.000!!',
@@ -48,13 +48,13 @@ class User {
             return;
         }
 
-        this.addToTable(nama, umur, uangSaku);
+        this.addToTable(nama, umur, uangSangu);
         this.updateResume();
 
         // Menghapus nilai di form
         this.namaInput.value = "";
         this.umurInput.value = "";
-        this.uangSakuInput.value = "";
+        this.uangSanguInput.value = "";
 
         Swal.fire({
             title: 'Berhasil!!',
@@ -65,7 +65,7 @@ class User {
     }
 
     // Method untuk menambahkan baris baru di tabel
-    addToTable(nama, umur, uangSaku) {
+    addToTable(nama, umur, uangSangu) {
         const newRow = this.dataTabel.insertRow(this.dataTabel.rows.length);
         const cell1 = newRow.insertCell(0);
         const cell2 = newRow.insertCell(1);
@@ -73,7 +73,7 @@ class User {
 
         cell1.innerHTML = nama;
         cell2.innerHTML = umur;
-        cell3.innerHTML = uangSaku;
+        cell3.innerHTML = uangSangu;
     }
 
     // Mengupdate Resume
@@ -84,10 +84,10 @@ class User {
 
         for (let i = 0; i < rows.length; i++) {
             const row = rows[i];
-            const uangSaku = parseInt(row.cells[2].innerHTML);
+            const uangSangu = parseInt(row.cells[2].innerHTML);
             const umur = parseInt(row.cells[1].innerHTML);
 
-            totalUangSaku += uangSaku;
+            totalUangSaku += uangSangu;
             totalUmur += umur;
         }
 
